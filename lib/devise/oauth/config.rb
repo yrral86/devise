@@ -14,11 +14,11 @@ module Devise
 
       def authorize_url(options)
         options[:scope] ||= @scope.join(',')
-        client.web_server.authorize_url(options)
+        client.authorize_url(options)
       end
 
       def access_token_by_code(code, redirect_uri=nil)
-        client.web_server.get_access_token(code, :redirect_uri => redirect_uri)
+        client.get_access_token(code, :redirect_uri => redirect_uri)
       end
 
       def access_token_by_token(token)
